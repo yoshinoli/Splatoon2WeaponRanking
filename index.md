@@ -5,6 +5,7 @@ layout: default
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/share.css" />
     <link href="assets/css/slimbox2.css" type="text/css" rel="stylesheet" media="screen" />
     <script type="text/javascript" src="script/selecter.js"></script>
     <script type="text/javascript" src="script/canvas.js"></script>
@@ -191,7 +192,7 @@ Twitterシェア機能はまだ作成途中です。
     <button onclick="generateButtonClicked();">画像生成</button>
 </div>
 
-<a href="" id="canvasLightBox" rel="lightbox" title="sample">
+<a href="" id="canvasLightBox" rel="lightbox" title="">
     <canvas class="noDisplay" id="canvas" width="0" height="0"></canvas>
 </a>
 
@@ -207,4 +208,5 @@ Twitterシェア機能はまだ作成途中です。
 サイト作成 : boomx <a href="https://twitter.com/sisno_boomx" target="_blank">@sisno_boomx</a>
 
 このサイトをツイッターでシェアしよう！ 
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="スプラトゥーン2の500傑ブキランキングメーカー" data-url="https://boomxch.github.io/Splatoon2WeaponRanking/" data-hashtags="Splatoon2" data-lang="ja" data-dnt="true" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<a class="btn btn-icon btn-twitter" href="http://twitter.com/share?url=https://boomxch.github.io/Splatoon2WeaponRanking/&text=500傑ブキランキング!&hashtags=Splatoon2" target="_blank"><i class="fa fa-twitter"></i><span>Share</span></a>

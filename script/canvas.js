@@ -42,6 +42,31 @@ function downloadButtonClicked()
     document.getElementById("download").href = base64;
 }
 
+function imageToDataUri(img, width, height) 
+{
+    var canvas = document.createElement('canvas'),
+        ctx = canvas.getContext('2d');
+
+    canvas.width = width;
+    canvas.height = height;
+
+    ctx.drawImage(img, 0, 0, width, height);
+
+    return canvas.toDataURL('image/png');
+}
+
+function changeLightBoxUri() 
+{
+    var canvas = document.getElementById('canvas');
+    
+    var width = window.innerWidth - 100;
+    var newDataUri = imageToDataUri(this, width, canvas.height * width / canvas.width);
+
+    document.getElementById("canvasLightBox").href = newDataUri;
+    document.getElementById("canvasLightBox").title = document.titleForm.titleInput.value+" ランキング";
+}
+
+// jsonロード → 背景画像ロード → 背景出力 → 画像ロード → 画像出力 → 文字ロード → 文字出力
 function getJsonDataFromPath(path,index)
 {
     var req = new XMLHttpRequest();
@@ -58,7 +83,16 @@ function getJsonDataFromPath(path,index)
     req.send(null);
 }
 
-// jsonロード → 背景画像ロード → 背景出力 → 画像ロード → 画像出力 → 文字ロード → 文字出力
+function drawBackgroundImageToCanvas()
+{
+    var img = new Image;
+    img.src = base64;
+    img.onload = function()
+    {
+        
+    };
+}
+
 function drawCanvasFromData()
 {
     var canvas = document.getElementById('canvas');
@@ -126,28 +160,4 @@ function getMatchedRankingData()
     }
 
     return result;
-}
-
-function imageToDataUri(img, width, height) 
-{
-    var canvas = document.createElement('canvas'),
-        ctx = canvas.getContext('2d');
-
-    canvas.width = width;
-    canvas.height = height;
-
-    ctx.drawImage(img, 0, 0, width, height);
-
-    return canvas.toDataURL('image/png');
-}
-
-function changeLightBoxUri() 
-{
-    var canvas = document.getElementById('canvas');
-    
-    var width = window.innerWidth - 100;
-    var newDataUri = imageToDataUri(this, width, canvas.height * width / canvas.width);
-
-    document.getElementById("canvasLightBox").href = newDataUri;
-    document.getElementById("canvasLightBox").title = document.titleForm.titleInput.value+" ランキング";
 }
