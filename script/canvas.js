@@ -187,6 +187,12 @@ function drawStringDataToCanvasFromData()
     var year = document.seasonForm.yearSelect.value;
     var month = document.seasonForm.monthSelect.value;
 
+    // url
+    ctx.fillStyle = "#000000";
+    ctx.textAlign = "right";
+    ctx.font = "15pt MPLUSRounded1c";
+    ctx.fillText("https://boomxch.github.io/Splatoon2WeaponRanking/",canvas.width - 5,20);
+
     // title
     ctx.fillStyle = "#FF7F50";
     ctx.textAlign = "center";
