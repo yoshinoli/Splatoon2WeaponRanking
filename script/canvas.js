@@ -60,7 +60,7 @@ function changeLightBoxUri()
     var newDataUri = imageToDataUri(this, width, canvas.height * width / canvas.width);
 
     document.getElementById("canvasLightBox").href = newDataUri;
-    document.getElementById("canvasLightBox").title = document.titleForm.titleInput.value+" ランキング";
+    document.getElementById("canvasLightBox").title = document.titleForm.titleInput.value+"ランキング";
 }
 
 // jsonロード → 背景画像ロード → 背景出力 → 画像ロード → 画像出力 → 文字ロード → 文字出力
@@ -190,17 +190,21 @@ function drawStringDataToCanvasFromData()
     // url
     ctx.fillStyle = "#000000";
     ctx.textAlign = "right";
-    ctx.font = "15pt MPLUSRounded1c";
+    ctx.font = "bold 15pt MPLUSRounded1c";
     ctx.fillText("boomxch.github.io/Splatoon2WeaponRanking/",canvas.width - 5,20);
 
     // title
-    ctx.fillStyle = "#FF7F50";
+    ctx.strokeStyle = "#191817";
+    ctx.lineWidth = 3;
+    ctx.fillStyle = "#FF4500";
     ctx.textAlign = "center";
     ctx.font = "50pt NicoMoji";
-    ctx.fillText(title+" ランキング", canvas.width/2,60);
+    ctx.strokeText(title+"ランキング", canvas.width/2,60);
+    ctx.fillText(title+"ランキング", canvas.width/2,60);
 
     // subtitle
     ctx.font = "bold 30pt MPLUSRounded1c";
+    ctx.strokeText(year+" / "+month, canvas.width/2,110);
     ctx.fillText(year+" / "+month, canvas.width/2,110);
 
     // rule
@@ -211,14 +215,18 @@ function drawStringDataToCanvasFromData()
 
     // data
     ctx.textAlign = "left";
+    ctx.strokeStyle = "#191817";
 
     for(var i = 0; i < ranking.length; i++)
     {
         for(var j = 0; j < ranking[i].length; j++)
         {
-            ctx.font = "20pt NicoMoji";
+            ctx.font = "bold 20pt NicoMoji";
             ctx.fillStyle = "#ADFF2F";
+            ctx.lineWidth = 1;
+            ctx.strokeText(ranking[i][j].rank_change=="up"?"↑":ranking[i][j].rank_change=="down"?"↓":"→",canvas.width * (i * 2) / 8  + 105,startY + interval * j);
             ctx.fillText(ranking[i][j].rank_change=="up"?"↑":ranking[i][j].rank_change=="down"?"↓":"→",canvas.width * (i * 2) / 8  + 105,startY + interval * j);
+            ctx.font = "20pt NicoMoji";
             ctx.fillStyle = "#000000";
             ctx.fillText(ranking[i][j].name, canvas.width * (i * 2) / 8  + 190,startY + interval * j);
             ctx.fillStyle = "#191817";
@@ -229,6 +237,8 @@ function drawStringDataToCanvasFromData()
             ctx.fillStyle = "#FFFFFF";
             ctx.fillText(ranking[i][j].x_power.toFixed(1), canvas.width * ((i + 1) * 2) / 8  - 128,startY + interval * j + 2);
             ctx.fillStyle = "#FF4500";
+            ctx.lineWidth = 2;
+            ctx.strokeText(ranking[i][j].rank, canvas.width * (i * 2) / 8  + 55,startY + interval * j);
             ctx.fillText(ranking[i][j].rank, canvas.width * (i * 2) / 8  + 55,startY + interval * j);
         }
     }
