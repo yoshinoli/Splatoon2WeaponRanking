@@ -2,12 +2,13 @@ const rules = ["splat_zones","tower_control","rainmaker","clam_blitz"];
 const rulesJP = ["ガチエリア","ガチヤグラ","ガチホコ","ガチアサリ"];
 var checkedWeapon;
 var rankingData = new Array();
+var isFontLoaded = false;
 
 function generateButtonClicked()
 {
-    if (checkIsCorrectDate() == false)
+    if (!checkIsCorrectDate())
         return;
-
+    
     checkedWeapon = new Array();
 
     for (var i = 0; i < 139; i++)
@@ -104,8 +105,8 @@ var ctx;
 
 function initializeCanvas()
 {
-    canvas = document.getElementById("canvas");
-    ctx = canvas.getContext("2d");
+    canvas = document.getElementById('canvas');
+    ctx = canvas.getContext('2d');
     ranking = getMatchedRankingData();
 
     canvas.width = 2340;
