@@ -59,11 +59,10 @@
   <li>タイトル名を記述してください</li>
   <li>ランキング生成を行いたい年と月を決めてください</li>
   <li>作りたいブキをクリックしてください</li>
+  <li>画像生成ボタンをクリックしてください</li>
+  <li>生成された画像をクリックすると拡大して表示できます<br />
+画像を利用したい場合は画像ダウンロードボタンを押せば原寸大の画像がダウンロードできます</li>
 </ol>
-
-<h2 id="注意">注意</h2>
-<p>Twitterシェア機能はまだ作成途中です。
-ランキング画像を利用したい場合は、生成された画像を右クリックし、保存を選択してください。</p>
 
 <h2 id="splatoon2-weapon-ranking-maker">Splatoon2 Weapon Ranking Maker</h2>
 <h4 id="タイトル">タイトル</h4>
@@ -228,8 +227,8 @@
     <button onclick="generateButtonClicked();">画像生成</button>
 </div>
 
-<p><a href="" id="canvasLightBox" rel="lightbox" title="">
-    <canvas class="noDisplay" id="canvas" width="0" height="0"></canvas>
+<p><a href="" id="canvasLightBox" rel="lightbox" title="" class="noDisplay">
+    <canvas id="canvas" width="0" height="0"></canvas>
 </a></p>
 
 <div class="buttonWrapper noDisplay">

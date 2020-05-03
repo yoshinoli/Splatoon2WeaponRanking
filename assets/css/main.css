@@ -1,3 +1,15 @@
+@font-face
+{
+    font-family: "NicoMoji";
+    src: url(https://fonts.gstatic.com/ea/nicomoji/v1/NicoMoji-Regular.woff2) format("woff2");
+}
+
+@font-face
+{
+    font-family: "MPLUSRounded1c";
+    src: url(https://fonts.gstatic.com/s/mplusrounded1c/v10/VdGEAYIAV6gnpUpoWwNkYvrugw9RuPWDpq8A_4TPv30lLyDK_FIhT0K-oTdprA.0.woff2) format("woff2");
+}
+
 canvas
 {
     padding: 0.5em 0;
