@@ -1,6 +1,6 @@
 var yearFirst = 2018;
 var yearLast = 2020;
-var monthLast = 9;
+var monthLast = 10;
 
 function pageLoaded()
 {
