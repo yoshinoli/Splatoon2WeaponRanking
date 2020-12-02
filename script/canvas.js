@@ -207,8 +207,19 @@ function drawStringDataToCanvasFromData()
     ctx.strokeText(year+" / "+month, canvas.width/2,110);
     ctx.fillText(year+" / "+month, canvas.width/2,110);
 
+    // number
+    ctx.fillStyle = "#2e2c2b";
+    ctx.textAlign = "left";
+    ctx.font = "20pt NicoMoji";
+    for (var i = 0; i < rules.length; i++)
+        ctx.fillText(rulesJP[i], canvas.width*((i % 2) + 6) / 8, 70 + Math.floor(i / 2) * 50);
+    ctx.font = "bold 20pt MPLUSRounded1c";
+    for (var i = 0; i < rules.length; i++)
+        ctx.fillText(ranking[i].length, canvas.width*((i % 2) + 6.4) / 8, 70 + Math.floor(i / 2) * 50);
+
     // rule
     ctx.fillStyle = "#FFFFFF";
+    ctx.textAlign = "center";
     ctx.font = "30pt NicoMoji";
     for (var i = 0; i < rules.length; i++)
         ctx.fillText(rulesJP[i],canvas.width*(i*2+1)/8,200);
